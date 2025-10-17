@@ -1,0 +1,131 @@
+/* Container do formulário */
+form {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: linear-gradient(145deg, #ffeaa7, #fab1a0); /* tom divertido */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bolhas decorativas no fundo */
+form::before,
+form::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 0;
+}
+form::before {
+  width: 150px;
+  height: 150px;
+  top: -50px;
+  right: -50px;
+}
+form::after {
+  width: 100px;
+  height: 100px;
+  bottom: -30px;
+  left: -30px;
+}
+
+/* Campos do formulário */
+form > div,
+form > label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #2d3436;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+}
+
+/* Inputs e textarea */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  padding: 12px 14px;
+  color: black;
+  border: 2px solid #dfe6e9;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* Foco com cores por tipo */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #fd79a8; /* rosa vibrante */
+  box-shadow: 0 0 8px rgba(253,121,168,0.5);
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Botão de envio com gradiente Pokémon */
+input[type="submit"] {
+  background: linear-gradient(135deg, #ffeaa7, #fd79a8);
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(253,121,168,0.4);
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(253,121,168,0.6);
+}
+
+/* Placeholder estilizado */
+::placeholder {
+  font-style: italic;
+}
+
+/* Pequeno efeito divertido nos selects */
+select {
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><polygon points="0,0 14,0 7,10" fill="%23363636"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  appearance: none;
+}
+.success-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
