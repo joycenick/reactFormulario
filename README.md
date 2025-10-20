@@ -1,108 +1,63 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Cadastro_pokemon
 
-Currently, two official plugins are available:
+Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto cadastro_pokemon é uma aplicação React que cria um formulário para cadastrar pokemons, com hooks (useState), inputs controlados e estilização moderna com CSS.
 
-## React Compiler
+## Instalação
+Abre o terminal e segue o tutorial com comandos abaixo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Clone o repositório
+ ```sh
+git clone https://github.com/joasmarquesoliveira/cadastro_pokemon.git
+```
+Entre na pasta reactFormulario
+```sh
+cd reactFormulario
+```
+Acesse a pasta pelo vs code:
+```sh
+code .
+```
+## Detalhes do projeto
 
-## Expanding the ESLint configuration
+Para criar esse projeto usamos o comando abaixo que cria toda a estrutura de uma aplicação de React com Vite
+```sh
+npm create vite@latest . -- --template react
+```
+mas só utlizamos alguns arquivos:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# 🚀 Desafio em Dupla: Cadastro de Pokémons com React! 🧑‍💻🧑‍💻  
+O arquivo MyForm.css para estilizar o projeto (esse arquivo se encontra na pasta "styles")
 
-![Preview do projeto](./src/assets/pokemon-form-preview.png)  
-> Formulário moderno para cadastrar Pokémons, feito com React e CSS personalizado! 🎨  
+O arquivo MyForm.jsx que contém toda a regra de negócio (esse arquivo se encontra na pasta "components")
 
----
+E por fim o arquivo App.jsx para apresentar o o componente do arquivo MyForm.jsx
 
-## 🎯 Objetivo
+### MyForm.jsx
+Como foi falado acima, o MyForm.jsx é o arquivo que contém toda a informação de como funciona o formulário para cadastrar os pokémons. Ao acessa-lo, você irá ver o arquivo separa 3 partes
 
-Criar uma aplicação React com um **formulário interativo** para cadastrar Pokémons!  
-O projeto tem como foco treinar:
-- Hooks (`useState`)
-- Inputs controlados
-- Estilização moderna e responsiva com CSS  
+#### 1ª parte: imports
+O primeiro import serve para importar o hook `useState` do React, que é uma ferramenta para criar e gerenciar estados dentro de um componente funcional
 
----
+O segundo import serve para importar o arquivo `MyForm.css` e aplicar seus estilos ao componente
 
-## 🧩 Funcionalidades
 
-✅ **Nome do Pokémon** — campo de texto  
-🔥 **Tipo** — select com opções (ex: fogo, água, grama, elétrico, psíquico, pedra)  
-📜 **Descrição** — campo de texto multilinha  
-💪 **Poder** — input numérico (0 a 100)  
+#### 2ª parte: estados
 
-🟢 Ao clicar em **Cadastrar**, o app exibe a mensagem:  
-> “Pokémon cadastrado!” 🙌  
+Da linha 5 a 10, você verá a lista de estados feitos para guardar as informações do formulário, enviar uma mensagem sucesso e para listar os pokémons cadastrados
 
-🧼 Após o envio, os campos são automaticamente **limpos**.  
 
-💾 (Bônus) Mostra a **lista de Pokémons cadastrados** logo abaixo do formulário.  
-⚠️ (Bônus) Exibe mensagens de erro se algum campo obrigatório estiver vazio.  
+#### 3ª parte: HTML
+Da linha 37, você irá encontrar um `return` que retornará toda o corpo do HTML. 
 
----
+Dentro dele, temos um formulário controlado, onde cada campo utiliza os estados useState criado mais acima.
 
-## 🖼️ Layout
+Logo após, há uma pequena lógica que lista os pokémons cadastrados, que foram guardados dentro de um array e exibidos com o método `map()`.
 
-O design do formulário é minimalista e moderno:  
-- Fundo em **degradê suave** 🍑  
-- Cantos arredondados e sombras sutis 🌈  
-- Tipografia legível e divertida  
-- Layout centralizado e responsivo 💻📱  
+## Autores
 
-![Formulário de cadastro de Pokémon](./src/assets/preview.png)
+O projeto Cadastro_pokemon foi desenvolvida pelos jovens devenvolvedores de 17 anos:
+- Joyce Nicole Santana
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **React** ⚛️  
-- **Vite** ⚡ (para desenvolvimento rápido)  
-- **JavaScript (ES6+)**  
-- **CSS3** com gradiente e responsividade  
-- **Hooks React (useState)** para controle dos inputs  
-
----
-
-## 📂 Estrutura do Projeto
-reactFormulario/
-├── src/
-│ ├── components/
-│ │ └── MyForm.jsx
-│ ├── styles/
-│ │ └── MyForm.css
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── ...
-├── public/
-├── package.json
-├── vite.config.js
-└── README.md
-
-## 🧠 Como Rodar o Projeto
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/joycenick/reactFormulario.git
-   cd reactFormulario
-Instale as dependências:
-
-bash
-Copiar código
-npm install
-Inicie o servidor de desenvolvimento:
-
-bash
-Copiar código
-npm run dev
-Acesse no navegador:
-
-arduino
-Copiar código
-http://localhost:5173
+- Joás Marques Oliveira
